@@ -4,6 +4,7 @@ import { PostsContext } from "./PostContext";
 import { useAuth } from "../store/auth";
 import Post from "./ui/Post";
 import classifyPost from "@/redux/classifyPost";
+import ProfilePost from "./ProfilePost";
 
 
 
@@ -148,7 +149,7 @@ const groupedPosts = posts.reduce((acc, post) => {
       <h3 className="text-lg font-bold mt-6">{category}</h3>
       <div className="grid grid-cols-3 gap-1">
         {groupedPosts[category].map((post) => (
-        <Post key={post._id} post={post} />
+        <ProfilePost key={post._id} post={post} />
       ))}
       </div>
     </div>
@@ -162,7 +163,7 @@ const groupedPosts = posts.reduce((acc, post) => {
           </p>
         ) : (
           posts.map((post) => (
-            <Post key={post._id} post={post} />
+            <ProfilePost key={post._id} post={post} />
           ))
         )}
       </div>
